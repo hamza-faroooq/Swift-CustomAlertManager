@@ -17,7 +17,7 @@ Do the following simple steps to add the Manager class in your project and prese
 
 First of all follow this link to add the [Swift-TopViewController](https://github.com/hamza-faroooq/Swift-TopViewController) in your project. Because this file is used to present this ActionSheet
 
-Then, simply download or copy [this](https://github.com/hamza-faroooq/Swift-CustomAlertManager/blob/main/CustomAlertManager.swift) code and place it in your project. (Click on the link, this will take you to the directory where extension is placed)
+Then, simply download or copy [this](https://github.com/hamza-faroooq/Swift-CustomAlertManager/blob/main/CustomAlertManager.swift) code and place it in your project. (Click on the link, this will take you to the directory where CustomAlertManager is placed)
 
 If you do not want to add [Swift-TopViewController](https://github.com/hamza-faroooq/Swift-TopViewController) in your project. then you can modify [CustomAlertManager](https://github.com/hamza-faroooq/Swift-CustomAlertManager/blob/main/CustomAlertManager.swift) on your on
 
@@ -46,7 +46,7 @@ AlertManager.customAlertView(messageString: "A reset password link has been sent
 
 ```
 
-One thing is to keep in mind is when *isDismissingDialogForFirstButton* is set to *false* and you used the callback method, then you have to remove alert manually from your callback function like above
+One thing is to keep in mind is when *isDismissingDialogForFirstButton* is set to *false* and you used the callback method, then you have to remove custom alert manually from your callback function like above
 
 ### Double button usage with only first button callback
 
