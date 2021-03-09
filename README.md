@@ -46,7 +46,7 @@ AlertManager.customAlertView(messageString: "A reset password link has been sent
 
 ```
 
-One thing is to keep in mind is when *isDismissingDialogForFirstButton* is set to *false* and you used the callback method, then you have to remove custom alert manually from your callback function like above
+* One thing is to keep in mind is when ***isDismissingDialogForFirstButton*** is set to ***false*** and you used the callback method, then you have to remove custom alert manually from your callback function like above
 
 ### Double button usage with only first button callback
 
@@ -63,7 +63,7 @@ AlertManager.customAlertView(messageString: "Are you sure to logout?", isSingleB
 
 ```
 
-Play with the variables available to achieve more results
+* Play with the variables available to achieve more results
 
 ## Contributions
 
