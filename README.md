@@ -13,4 +13,4 @@ This class is used to make custom alert
 
 ## Simple Usage
 
-Do the following simple steps to add this Manager class in your project and present this CustomAlert
+Do the following simple steps to add the Manager class in your project and present this CustomAlert
