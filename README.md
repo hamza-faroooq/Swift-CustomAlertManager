@@ -40,13 +40,30 @@ AlertManager.customAlertView(messageString: "A reset password link has been sent
     AlertManager.topVCGeneric.view.viewWithTag(100)?.removeFromSuperview()
     AlertManager.topVCGeneric.view.viewWithTag(200)?.removeFromSuperview()
     
-    self.dismiss(animated: true, completion: nil)
+    // do your stuff here
 
 })
 
 ```
 
-That's it.
+One thing is to keep in mind is when *isDismissingDialogForFirstButton* is set to *false* and you used the callback method, then you have to remove alert manually from your callback function like above
+
+### Double button usage with only first button callback
+
+```swift
+
+AlertManager.customAlertView(messageString: "Are you sure to logout?", isSingleButton: false, leftButtonTitle: "Yes", rightButtonTitle: "No", isDismissingDialogForFirstButton: false, leftButtonCallBack: {
+
+        AlertManager.topVCGeneric.view.viewWithTag(100)?.removeFromSuperview()
+        AlertManager.topVCGeneric.view.viewWithTag(200)?.removeFromSuperview()
+        
+        // do your stuff here
+        
+})
+
+```
+
+Play with the variables available to achieve more results
 
 ## Contributions
 
