@@ -14,3 +14,48 @@ This class is used to make custom alert
 ## Simple Usage
 
 Do the following simple steps to add the Manager class in your project and present this CustomAlert
+
+First of all follow this link to add the [Swift-TopViewController](https://github.com/hamza-faroooq/Swift-TopViewController) in your project. Because this file is used to present this ActionSheet
+
+Then, simply download or copy [this](https://github.com/hamza-faroooq/Swift-CustomAlertManager/blob/main/CustomAlertManager.swift) code and place it in your project. (Click on the link, this will take you to the directory where extension is placed)
+
+If you do not want to add [Swift-TopViewController](https://github.com/hamza-faroooq/Swift-TopViewController) in your project. then you can modify [CustomAlertManager](https://github.com/hamza-faroooq/Swift-CustomAlertManager/blob/main/CustomAlertManager.swift) on your on
+
+## Example
+
+### Single button usage with no callback
+
+```swift
+
+AlertManager.customAlertView(messageString: "Enter Valid Email")
+
+```
+
+### Single button usage with callback
+
+```swift
+
+AlertManager.customAlertView(messageString: "A reset password link has been sent to the given email address", isDismissingDialogForFirstButton: false, leftButtonCallBack: {
+    
+    AlertManager.topVCGeneric.view.viewWithTag(100)?.removeFromSuperview()
+    AlertManager.topVCGeneric.view.viewWithTag(200)?.removeFromSuperview()
+    
+    self.dismiss(animated: true, completion: nil)
+
+})
+
+```
+
+That's it.
+
+## Contributions
+
+Your contributions are most welcomed. Do let me know if you find any kind of issue while using this file. Please open an issue to discuss that problem. Thanks
+
+## Auther
+
+Hamza Farooq, hamza_faroooq@yahoo.com
+
+## License
+
+[MIT](https://github.com/hamza-faroooq/Swift-CustomAlertManager/blob/main/LICENSE) (Click Me O_o)
