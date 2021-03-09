@@ -8,8 +8,7 @@ class AlertManager {
     static var leftButtonCallBackGeneric: (()->())?
     static var rightButtonCallBackGeneric: (()->())?
     
-    class func customAlertView(titleString: String = ALERT, messageString: String = "", isSingleButton: Bool = true, leftButtonTitle: String = OKAY, rightButtonTitle: String = CANCEL, isDismissingDialogForFirstButton: Bool = true, isDismissingDialogForSecondButton: Bool = true, leftButtonCallBack: (()->())? = nil, rightButtonCallBack: (()->())? = nil) -> Void {
-        
+class func customAlertView(titleString: String = ALERT, messageString: String = "", isSingleButton: Bool = true, leftButtonTitle: String = OKAY, rightButtonTitle: String = CANCEL, isDismissingDialogForFirstButton: Bool = true, isDismissingDialogForSecondButton: Bool = true, alertImage: UIImage? = UIImage(named: "appLogoBackGround"), leftButtonCallBack: (()->())? = nil, rightButtonCallBack: (()->())? = nil) -> Void {        
         // 100 tag for most outer view
         // 200 tag for outer view
         // -1 tag for first button to dismiss the alert when isDismissingDialogForFirstButton is set to true
