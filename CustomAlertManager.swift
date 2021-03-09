@@ -8,7 +8,8 @@ class AlertManager {
     static var leftButtonCallBackGeneric: (()->())?
     static var rightButtonCallBackGeneric: (()->())?
     
-class func customAlertView(titleString: String = ALERT, messageString: String = "", isSingleButton: Bool = true, leftButtonTitle: String = OKAY, rightButtonTitle: String = CANCEL, isDismissingDialogForFirstButton: Bool = true, isDismissingDialogForSecondButton: Bool = true, alertImage: UIImage? = UIImage(named: "appLogoBackGround"), leftButtonCallBack: (()->())? = nil, rightButtonCallBack: (()->())? = nil) -> Void {        
+    class func customAlertView(titleString: String = ALERT, messageString: String = "", isSingleButton: Bool = true, leftButtonTitle: String = OKAY, rightButtonTitle: String = CANCEL, isDismissingDialogForFirstButton: Bool = true, isDismissingDialogForSecondButton: Bool = true, alertImage: UIImage? = UIImage(named: "appLogoBackGround"), color: UIColor = .cyan, leftButtonCallBack: (()->())? = nil, rightButtonCallBack: (()->())? = nil) -> Void {
+        
         // 100 tag for most outer view
         // 200 tag for outer view
         // -1 tag for first button to dismiss the alert when isDismissingDialogForFirstButton is set to true
@@ -22,7 +23,7 @@ class func customAlertView(titleString: String = ALERT, messageString: String = 
         
         // creating most outer view
         let mostOuterView = UIView(frame: CGRect(x: 0, y: 0, width: totalWidth, height: totalHeight))
-        mostOuterView.backgroundColor = .color_black
+        mostOuterView.backgroundColor = .black
         mostOuterView.alpha = 0.5
         mostOuterView.tag = 100
         topVC.view.addSubview(mostOuterView)
@@ -32,7 +33,7 @@ class func customAlertView(titleString: String = ALERT, messageString: String = 
         let calculatedHeight = 300
         
         let outerView = UIView(frame: CGRect(x: 0, y: 0, width: Int(calculatedWidth), height: calculatedHeight))
-        outerView.backgroundColor = .color_white
+        outerView.backgroundColor = .white
         outerView.layer.cornerRadius = 8
         outerView.tag = 200
         topVC.view.addSubview(outerView)
@@ -42,7 +43,7 @@ class func customAlertView(titleString: String = ALERT, messageString: String = 
         let totalWidthAndHeightOfImageView = 40
             
         let imageLogo = UIImageView(frame: CGRect(x: 0, y: spacingBetweenOuterViewAndImageViewFromTop, width: totalWidthAndHeightOfImageView, height: totalWidthAndHeightOfImageView))
-        imageLogo.image = UIImage(named: "appLogoBackGround")
+        imageLogo.image = alertImage
         imageLogo.contentMode = .scaleAspectFit
         outerView.addSubview(imageLogo)
         
@@ -55,7 +56,7 @@ class func customAlertView(titleString: String = ALERT, messageString: String = 
         titleLabel.textAlignment = .center
         titleLabel.text = titleString
         titleLabel.numberOfLines = 1
-        titleLabel.textColor = .color_lightBluish
+        titleLabel.textColor = color
         titleLabel.font = UIFont(name: SharedManager.boldFont(), size: 16)
         outerView.addSubview(titleLabel)
             
@@ -70,7 +71,7 @@ class func customAlertView(titleString: String = ALERT, messageString: String = 
         messageLabel.text = messageString
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.textColor = .color_black
+        messageLabel.textColor = .black
         messageLabel.font = UIFont(name: SharedManager.demiBoldFont(), size: 14)
             
         let dynamicHeightOfMessageLabel = dynamicHeightOfLabel(text: messageLabel.text!, font: messageLabel.font, width: calculatedWidthForMessageLabel)
@@ -95,10 +96,10 @@ class func customAlertView(titleString: String = ALERT, messageString: String = 
         //left Button
         let firstButton = UIButton()
         firstButton.layer.cornerRadius = 4
-        firstButton.backgroundColor = .color_lightBluish
+        firstButton.backgroundColor = color
         firstButton.setTitle(leftButtonTitle, for: .normal)
         firstButton.titleLabel?.font = UIFont(name: SharedManager.boldFont(), size: 14)
-        firstButton.setTitleColor(.color_white, for: .normal)
+        firstButton.setTitleColor(.white, for: .normal)
         firstButton.addTarget(self, action: #selector(AlertManager.firstButtonAction(sender:)), for: .touchUpInside)
         
         if isDismissingDialogForFirstButton {
@@ -110,10 +111,10 @@ class func customAlertView(titleString: String = ALERT, messageString: String = 
         //right Button
         let secondButton = UIButton()
         secondButton.layer.cornerRadius = 4
-        secondButton.backgroundColor = .color_lightBluish
+        secondButton.backgroundColor = color
         secondButton.setTitle(rightButtonTitle, for: .normal)
         secondButton.titleLabel?.font = UIFont(name: SharedManager.boldFont(), size: 14)
-        secondButton.setTitleColor(.color_white, for: .normal)
+        secondButton.setTitleColor(.white, for: .normal)
         secondButton.addTarget(self, action: #selector(AlertManager.secondButtonAction(sender:)), for: .touchUpInside)
         
         if isDismissingDialogForSecondButton {
