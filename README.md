@@ -69,6 +69,8 @@ AlertManager.customAlertView(messageString: "Are you sure to logout?", isSingleB
 * Alert title and buttons Color
 * Alert Image
 
+### I uses this class for my own personal use, if you want to use some other methods or want to modify this class on your own, you can. :-)
+
 ## Contributions
 
 Your contributions are most welcomed. Do let me know if you find any kind of issue while using this file. Please open an issue to discuss that problem. Thanks
